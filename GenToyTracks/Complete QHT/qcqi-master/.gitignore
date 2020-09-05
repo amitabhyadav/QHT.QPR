@@ -1,0 +1,10 @@
+**/*.DS_Store
+**/*.aux
+**/*.log
+**/*.toc
+**/*.pdf
+**/*.swp
+**/*.out
+**/__pycache__
+**/*.pyc
+**/*.png

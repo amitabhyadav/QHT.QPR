@@ -1,0 +1,110 @@
+% Exercise 2.7
+\section{}
+
+For each of the following states, describe all orthonormal bases that include that state.
+\begin{enumerate}[label=\alph*.,ref={Ex.~\thesection\alph*}]
+\label{ex:2p7}
+    % a.
+    \item $\spket{}{0}{+ \ibf}{1}$
+    % b.
+    \item $\tfrac{1 + \ibf}{2} \ket{0} - \tfrac{1 - \ibf}{2} \ket{1}$
+    % c.
+    \item $\spket{}{0}{+ e^{\ibf \pi / 6}}{1}$
+    % d.
+    \item $\tfrac{1}{2} \ket{+} - \tfrac{\ibf \sqrt{3}}{2} \ket{-}$
+\end{enumerate}
+
+{\Sol}
+There are a number of methods with which we can construct an orthonormal basis that
+includes a given state.
+
+\begin{enumerate}[label=\alph*.,ref={Sol.~\thesection\alph*}]
+\label{sol:2p7}
+    % a.
+    \item \label{sol:2p7a} This is the $\ket{\ibf}$ state, so
+    \begin{align*}
+        \left \{ e^{\ibf \phi} \iket, e^{\ibf \phi} \imket \right \} = e^{\ibf \phi} \left \{ \ket{\ibf}, \ket{-\ibf} \right \}
+    \end{align*}
+    for $\phi = \R$ describe all orthonormal bases including the given state.
+    % b.
+    \item Note that this is the same state as in \ref{sol:2p7a}, multiplied by a complex constant factor of modulus one, $\tfrac{1+\ibf}{\sqrt{2}}$.
+    Therefore, the orthonormal bases including the given state are again,
+    \begin{align*}
+        e^{\ibf \phi} \left \{ \ket{\ibf}, \ket{-\ibf} \right \},
+    \end{align*}
+    where we have absorbed the constant factor into the global phase, $e^{\ibf \phi}$.
+    % c.
+    \item We will solve this in two ways.
+    First, recall that an n-dimensional state vector, $\ket{v}$, in Hilbert space can be written in an arbitrary basis as,
+    \begin{align*}
+        \ket{v} = \begin{pmatrix} a_1 \\ . \\ . \\ . \\ a_n \end{pmatrix},
+    \end{align*}
+    and its complex conjugate as,
+    \begin{align*}
+        \bra{v} = \begin{pmatrix} \overline{a_1}, \ldots, \overline{a_n} \end{pmatrix}.
+    \end{align*}
+    To find an orthonormal state to our given state, we require,
+    \begin{align*}
+        \begin{pmatrix} 1 & e^{-\ibf \pi/6} \end{pmatrix} \begin{pmatrix} a_1 \\ a_2 \end{pmatrix} = 0 \\
+        \Rightarrow a_1 = -e^{-\ibf \pi / 6},~a_2 = 1,
+    \end{align*}
+    giving an orthonormal basis state,
+    \begin{align*}
+        \ket{v^\perp} = \spket{-e^{-\ibf \pi/6}}{0}{+}{1}
+    \end{align*}
+
+    Another way to solve this problem is to recast the given state vector in the \textit{extended complex plane}, $\C \cup \infty$.
+    The correspondence betweeen $\C$ and the given state is given by,
+    \begin{align*}
+        \spket{}{0}{+ e^{\ibf \pi / 6}}{1} \mapsto \tfrac{e^{\ibf \pi / 6}}{\sqrt{2}} / \tfrac{1}{\sqrt{2}} = e^{\ibf \pi / 6},
+    \end{align*}
+    and can be represented by the complex number $\alpha = \tfrac{\sqrt{3}}{2} + \tfrac{\ibf}{2}$.
+    This corresponds to the point $(\tfrac{\sqrt{3}}{2}, \tfrac{\ibf}{2}, 0)$ on the Bloch sphere with antipodal point
+    $(-\tfrac{\sqrt{3}}{2}, -\tfrac{\ibf}{2}, 0)$.
+    Expressed back in the extended complex plane, the antipodal point is $\alpha = -e^{\ibf \pi/6}$, and using the inverse of the map
+    above,
+    \begin{align*}
+        \alpha = -e^{\ibf \pi/6}  \mapsto & \spket{}{0}{-e^{\ibf \pi/6}}{1} \\
+        &\sim \spket{-e^{-\ibf \pi/6}}{0}{+}{1} \\
+        &= \ket{v^\perp}
+    \end{align*}
+    Note that $-e^{\ibf \pi/6} = e^{7 \ibf \pi/6}$, so, equivalently,
+    \begin{align*}
+        \ket{v^\perp} = \spket{}{0}{+ e^{7 \ibf \pi/6}}{1}.
+    \end{align*}
+    Therefore, the orthonormal bases containing the given vector are,
+    \begin{align*}
+         \left \{ \spket{}{0}{+ e^{\ibf \pi / 6}}{1}, \tfrac{1}{\sqrt{2}} (\ket{0} -  e^{\ibf \pi/6} \ket{1} ) \right \}.
+    \end{align*}
+    modulo a global phase.
+    % d.
+    \item \label{sol:2p7d} Recall the ``swap and negate'' trick from \ref{sol:2p2d}.
+    Applying the same procedure here, we obtain,
+    \begin{align*}
+        \ket{v'} = \tfrac{\ibf \sqrt{3}}{2} \ket{+} + {\tfrac{1}{2}} \ket{-}.
+    \end{align*}
+    But wait,
+    \begin{align*}
+        \bra{v'}\ket{v} = -\tfrac{\ibf \sqrt{3}}{4} - \tfrac{\ibf \sqrt{3}}{4} = - \tfrac{\ibf \sqrt{3}}{2} \neq 0~(!)
+    \end{align*}
+    That is, the shortcut does not apply here because we are dealing with imaginary amplitudes.
+    Let's try again, this time being a bit smarter about it:
+    \begin{align*}
+        \begin{pmatrix} \tfrac{1}{2} & \tfrac{\ibf \sqrt{3}}{2} \end{pmatrix} \begin{pmatrix} a_1 \\ a_2 \end{pmatrix} = 0 \\
+        \Rightarrow a_1 = - \ibf \sqrt{3} a_2.
+    \end{align*}
+    Now, we can choose either $a_1 = - \ibf \sqrt{3}, a_2 = 1$ and get
+    \begin{align*}
+        \ket{v^\perp} = \tfrac{- \ibf \sqrt{3}}{2} \ket{+} + {\tfrac{1}{2}} \ket{-},
+    \end{align*}
+    or $a_1 = \ibf \sqrt{3}, a_2 = -1$ for
+    \begin{align*}
+        \ket{v^\perp} = \tfrac{\ibf \sqrt{3}}{2} \ket{+} - {\tfrac{1}{2}} \ket{-}
+    \end{align*}
+    as these both represent the same state, \textit{i.e.} they differ by global phase.
+    Therefore, the orthonormal basis that includes the given state is,
+    \begin{align*}
+         \left \{ \tfrac{1}{2} \ket{+} - \tfrac{\ibf \sqrt{3}}{2} \ket{-}, \tfrac{- \ibf \sqrt{3}}{2} \ket{+} + {\tfrac{1}{2}} \ket{-} \right \}.
+    \end{align*}
+    modulo a global phase.
+\end{enumerate}

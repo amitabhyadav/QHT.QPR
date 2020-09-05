@@ -1,0 +1,57 @@
+% Exercise 2.3
+\section{}
+
+Which states are superpositions with respect to the standard basis, and which are not?
+For each state that is a superposition, give a basis with respect to which it is not a
+superposition.
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*.,ref={Ex.~\thesection\alph*}]
+    \label{ex:2p3}
+        % a.
+        \item $\ket{+}$
+        % b.
+        \item $\spket{}{+}{+}{-}$
+        % c.
+        \item $\spket{}{+}{-}{-}$
+        % d.
+        \item $\tfrac{\sqrt{3}}{2} \ket{+} - \tfrac{1}{2} \ket{-}$
+        % e.
+        \item $\spket{}{\ibf}{-}{- \ibf}$
+        % f.
+        \item $\spket{}{0}{-}{1}$
+    \end{enumerate}
+\end{multicols}
+
+{\Sol}
+\begin{enumerate}[label=\alph*.,ref={Sol.~\thesection\alph*}]
+\label{sol:2p3}
+    % a.
+    \item Superposition of the standard basis; not a superposition of the Hadamard basis (trivial).
+    % b.
+    \item Recall from \ref{sol:2p2g} that this state is just $\ket{0}$.
+    Therefore, it is not a superposition of the standard basis.
+    % c.
+    \item This state is just $\ket{1}$; not a superposition of the standard basis.
+    % d.
+    \item \label{sol:2p2d} Maybe this is not too clear at first glance -- let's expand the state:
+    \begin{align*}
+        \tfrac{\sqrt{3}}{2} \ket{+} - \tfrac{1}{2} \ket{-} &= \tfrac{\sqrt{3}}{2} \left (\spket{}{0}{+}{1} \right )  - \tfrac{1}{2} \left (\spket{}{0}{-}{1} \right ) \\
+        &= \tfrac{1}{2\sqrt{2}} \left ( ({\sqrt{3} - 1}) \ket{0} + ({\sqrt{3} + 1}) \ket{1} \right )
+    \end{align*}
+    Indeed, this is a superposition of the standard basis. We can easily construct a basis in which this state is
+    not a superposition by choosing one of the bases as the state itself, and then finding an orthogonal state to it.
+    The orthogonal state can be constructed trivially by negating the sign of one of $\ket{-}$ and swapping the amplitudes,
+    \begin{align*}
+        \tfrac{\sqrt{3}}{2} \ket{+} - \tfrac{1}{2} \ket{-} \to \tfrac{1}{2} \ket{+} + \tfrac{\sqrt{3}}{2} \ket{-}.
+    \end{align*}
+    So, a basis in which this state is not a superposition is,
+    \begin{align*}
+        \left \{ \tfrac{\sqrt{3}}{2} \ket{+} - \tfrac{1}{2} \ket{-}, \tfrac{1}{2} \ket{+} + \tfrac{\sqrt{3}}{2} \ket{-} \right \}.
+    \end{align*}
+    Note that this ``swap and negate'' trick does not always work; see \ref{sol:2p7d}.
+    % e.
+    \item We know from \ref{sol:2p2h} that this state is $\ibf \ket{1}$, so it is not a superposition of the standard basis.
+    % f.
+    \item This is clearly a superposition of the standard basis, but not of the Hadamard basis.
+\end{enumerate}

@@ -1,0 +1,133 @@
+% Exercise 2.2
+\section{}
+
+Which pairs of expressions for quantum states represent the same state?
+For those pairs that represent different states, describe a measurement
+for which the probabilities of the two outcomes differ for the two states
+and give these probabilities.
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*.,ref={Ex.~\thesection\alph*}]
+        % a.
+        \item $\ket{0}$ and $-\ket{0}$
+        % b.
+        \item $\ket{1}$ and $\ibf \ket{1}$
+        % c.
+        \item $\tfrac{1}{\sqrt{2}} (\ket{0} + \ket{1})$ and $\tfrac{1}{\sqrt{2}} (-\ket{0} + \ibf \ket{1})$
+        % d.
+        \item $\tfrac{1}{\sqrt{2}} (\ket{0} + \ket{1})$ and $\tfrac{1}{\sqrt{2}} (\ket{0} - \ket{1})$
+        % e.
+        \item $\tfrac{1}{\sqrt{2}} (\ket{0} - \ket{1})$ and $\tfrac{1}{\sqrt{2}} (\ket{1} - \ket{0})$
+        % f.
+        \item $\spket{}{0}{+\ibf}{1}$ and $\spket{\ibf}{1}{-}{0}$
+        % g.
+        \item $\spket{}{+}{+}{-}$ and $\ket{0}$
+        % h.
+        \item $\spket{}{\ibf}{-}{-\ibf}$ and $\ket{1}$
+        % i.
+        \item $\spket{}{\ibf}{+}{-\ibf}$ and $\spket{}{-}{+}{+}$
+        % j.
+        \item $\spket{}{0}{+ e^{\ibf \pi / 4}}{1}$ and $\spket{e^{- \ibf \pi / 4}}{0}{+}{1}$
+    \end{enumerate}
+\end{multicols}
+
+\hypertarget{sol:2p2}{{\Sol}}
+Recall the equivalence relation,
+\begin{align}
+\label{eqn:globalphase}
+    \ket{v} \sim \ket{v'} \Rightarrow \ket{v} &= c \ket{v'};~c~\exists~\C,~|c| = 1,
+\end{align}
+where $c = e^{\ibf \phi},~\phi \in [0, 2 \pi\}$ is called the \textit{global phase}, and has no physical meaning.
+That is, two states which differ by a global phase are the same state.
+On the other hand, the \textit{relative phase}, which satisfies,
+\begin{align}
+\label{eqn:relativephase}
+    z/z' = e^{\ibf \phi} |z|/|z'|,
+\end{align}
+is a measure of the angle between two complex numbers $z$ and $z'$.
+Two superpositions $\alpha \ket{0} + \beta \ket{1}$ and
+$\alpha' \ket{0} + \beta' \ket{1}$ whose amplitudes have the same magnitude but differ
+in a relative phase represent different states.
+
+Note that for brevity we denote the first state in each expression above as $\ket{v}$ and the second
+state as $\ket{v'}$.
+\begin{enumerate}[label=\alph*.,ref={Sol.~\thesection\alph*}]
+    % a.
+    \item Same state; global phase, $c = e^{\ibf \pi}$.
+    % b.
+    \item Same state; global phase, $c = e^{\ibf \pi/2}$.
+    % c.
+    \item Different states; relative phases, $c_{\ket{0}} = e^{\ibf \pi}$ and $c_{\ket{1}} = e^{\ibf \pi/2}$. \\
+    We can choose to measure these two states in the \textit{Hadamard basis}, $\{ \ket{+}, \ket{-} \}$, where
+    \begin{align}
+    \label{eqn:hadamardbasis}
+        \ket{+} &\equiv \tfrac{1}{\sqrt{2}} (\ket{0} + \ket{1}), \\
+        \ket{-} &\equiv \tfrac{1}{\sqrt{2}} (\ket{0} - \ket{1}),
+    \end{align}
+    to find the probabilities.
+
+    Let's work this one out in gory detail, starting with $\ket{v}$.
+    \begin{align}
+        P_{\ket{v}}(\ket{+}) &= |\bra{+} \ket{v}|^2 \nonumber \\
+        &= |\braket{+}|^2 \tag{\text{since} $\ket{v} = \ket{+}$} \nonumber \\
+        &= \left |\tfrac{1}{\sqrt{2}} \left (\bra{0} + \bra{1} \right ) \cdot \tfrac{1}{\sqrt{2}} \left (\ket{0} + \ket{1} \right ) \right |^2 \nonumber \\
+        &= \left |\tfrac{1}{2} (\braket{0} + \braket{1}) \right |^2 \nonumber \\
+        &= 1 \nonumber \\
+        P_{\ket{v}}(\ket{-}) &= |\bra{-} \ket{v}|^2 \nonumber \\
+        &= |\bra{-} \ket{+}|^2 \nonumber \\
+        &= 0 \tag{Orthogonal states}
+    \end{align}
+
+    Also in the Hadamard basis, we calculate the probabilities for $\ket{v'}$:
+    \begin{align}
+        P_{\ket{v'}}(\ket{+}) &= |\bra{+} \ket{v'}|^2 \nonumber \\
+        &= \left |\tfrac{1}{\sqrt{2}} \left (\bra{0} + \bra{1} \right ) \cdot \tfrac{1}{\sqrt{2}} (-\ket{0} + \ibf \ket{1}) \right |^2 \nonumber \\
+        &= \left | \tfrac{1}{2} (-\braket{0} + \ibf \braket{1}) \right |^2 \nonumber \\
+        &= \tfrac{1}{2} \nonumber \\
+        P_{\ket{v'}}(\ket{-}) &= |\bra{-} \ket{v'}|^2 \nonumber \\
+        &= \left |\tfrac{1}{\sqrt{2}} \left (\bra{0} - \bra{1} \right ) \cdot \tfrac{1}{\sqrt{2}} (-\ket{0} + \ibf \ket{1}) \right |^2 \nonumber \\
+        &= \left | \tfrac{1}{2} (-\braket{0} - \ibf \braket{1}) \right |^2 \nonumber \\
+        &= \tfrac{1}{2} \nonumber \\
+    \end{align}
+
+    Therefore,
+    \begin{empheq}[box=\widefbox]{align}
+            \ket{v}: &~P(\ket{+}) = 1,~P(\ket{-}) = 0, \\
+            \ket{v'}: &~P(\ket{+}) = \tfrac{1}{2},~P(\ket{-}) = \tfrac{1}{2},
+    \end{empheq}
+    allowing one to clearly see the two states are not the same.
+    % d.
+    \item Different states; relative phase $c_{\ket{1}} = e^{\ibf \pi}$. \\
+    Note that these states are the Hadamard basis states.
+    Making the measurement in the Hadamard basis trivially gives,
+    \begin{empheq}[box=\widefbox]{align}
+            \ket{v}: &~P(\ket{+}) = 1,~P(\ket{-}) = 0, \\
+            \ket{v'}: &~P(\ket{+}) = 0,~P(\ket{-}) = 1,
+    \end{empheq}
+    % e.
+    \item Same states, $\ket{-}$; global phase $c = e^{\ibf \pi}$.
+    % f.
+    \item Different states; relative phase, $c_{\ket{0}} = e^{\ibf \pi}$ \\
+    Since $\ket{v} = \ket{\ibf}$ and $\ket{v} = -\ket{-\ibf}$, and we know these are orthogonal
+    states,
+    \begin{empheq}[box=\widefbox]{align}
+            \ket{v}: &~P(\ket{\ibf}) = 1,~P(\ket{-\ibf}) = 0, \\
+            \ket{v'}: &~P(\ket{\ibf}) = 0,~P(\ket{-\ibf}) = 1,
+    \end{empheq}
+    % g.
+    \item \label{sol:2p2g} Same states; global phase, $c = 1$.
+    This is easy to see by expanding $\ket{v}$:
+    \begin{align*}
+        \ket{v} &= \tfrac{1}{\sqrt{2}} \left ( \ket{+} + \ket{-} \right ) \\
+        &= \tfrac{1}{\sqrt{2}} \left ( \tfrac{1}{\sqrt{2}} (\ket{0} + \ket{1}) + \tfrac{1}{\sqrt{2}} (\ket{0} - \ket{1}) \right ) = \ket{0} \\
+        &= \ket{v'}
+    \end{align*}
+    % h.
+    \item \label{sol:2p2h} Same states; global phase, $c = e^{\ibf \pi / 2}$. \\
+    Expanding gives $\ket{v} = \ibf \ket{1}$.)
+    % i.
+    \item Same states; global phase, $c = e^{\ibf \pi}$. \\
+    Expanding gives $\ket{v} = \ket{v'} = \ket{0}$.
+    % j.
+    \item Same states; global phase, $\ket{v} = e^{- \ibf \pi / 4} \ket{v'}$.
+\end{enumerate}

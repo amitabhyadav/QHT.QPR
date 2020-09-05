@@ -1,0 +1,99 @@
+\documentclass[10pt, oneside]{memoir} 
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, physics, enumitem, multicol}
+\usepackage[linktocpage=true]{hyperref}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\usepackage{titlesec}
+\titleformat{\section}[runin]
+{\normalfont\bfseries}{Exercise~\thesection}{1em}{}
+\usepackage{empheq}
+\newcommand*\widefbox[1]{\fbox{#1}}
+
+
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}  
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Cdot}{\boldsymbol{\cdot}}
+\newcommand{\Sol}{\noindent\normalfont\bfseries\textit{Solution}\vspace{0.25em} \\}
+\newcommand{\ibf}{\mathbf{i}}
+\newcommand{\spket}[4]{\tfrac{1}{\sqrt{2}} \left (#1 \ket{#2} #3 \ket{#4} \right )}
+\newcommand{\Hket}[2]{\spket{#1}{+}{+ #2}{-}}
+\newcommand{\Hmket}[2]{\spket{#1}{+}{- #2}{-}}
+\newcommand{\iket}[0]{\spket{}{0}{+ \ibf}{1}}
+\newcommand{\imket}[0]{\spket{}{0}{- \ibf}{1}}
+\newcommand*{\pathI}{Part_I}
+\newcommand*{\pathII}{Part_II}
+\newcommand*{\pathIII}{Part_III}
+
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{conv}{Convention}
+\newtheorem{rem}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+
+\title{Solution Set to ``Quantum Computing: A Gentle Introduction''}
+\author{by Vincent R. Pascuzzi}
+\date{Spring 2020}
+
+\begin{document}
+
+\setcounter{chapter}{1}
+
+\maketitle
+\begin{KeepFromToc}
+    \tableofcontents
+\end{KeepFromToc}
+
+\newpage
+
+\part{QUANTUM BUILDING BLOCKS}
+% Chapter 2
+\include{\pathI/Chap2}
+\newpage
+% Chapter 3
+\include{\pathI/Chap3}
+\newpage
+% Chapter 4
+\include{\pathI/Chap4}
+\newpage
+% Chapter 5
+\include{\pathI/Chap5}
+\newpage
+% Chapter 6
+\include{\pathI/Chap6}
+
+\newpage
+
+\part{QUANTUM ALGORITHMS}
+% Chapter 7
+\include{\pathII/Chap7}
+\newpage
+% Chapter 8
+\include{\pathII/Chap8}
+\newpage
+% Chapter 9
+\include{\pathII/Chap9}
+
+\newpage
+
+\part{ENTANGLED STATES AND ROBUST QUANTUM COMPUTATION}
+% Chapter 10
+\include{\pathIII/Chap10}
+\newpage
+% Chapter 11
+\include{\pathIII/Chap11}
+\newpage
+% Chapter 12
+\include{\pathIII/Chap12}
+\newpage
+% Chapter 13
+\include{\pathIII/Chap13}
+
+
+
+\end{document}

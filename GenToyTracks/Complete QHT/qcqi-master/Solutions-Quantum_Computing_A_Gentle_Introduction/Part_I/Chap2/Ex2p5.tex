@@ -1,0 +1,30 @@
+% Exercise 2.5
+\section{}
+
+Give the set of all values of $\theta$ for which the following pairs of states are equivalent.
+\begin{enumerate}[label=\alph*.,ref={Ex.~\thesection\alph*}]
+\label{ex:2p5}
+    % a.
+    \item $\ket{1}$ and $\spket{}{+}{+ e^{\ibf \theta}}{-}$
+    % b.
+    \item $\spket{}{\ibf}{+ e^{\ibf \theta}}{- \ibf}$ and $\spket{}{- \ibf}{+ e^{- \ibf \theta}}{\ibf}$
+    % c.
+    \item $\tfrac{1}{2} \ket{0} - \tfrac{\sqrt{3}}{2} \ket{1}$ and $e^{\ibf \theta} \left ( \tfrac{1}{2} \ket{0} - \tfrac{\sqrt{3}}{2} \ket{1} \right )$
+\end{enumerate}
+
+{\Sol}
+For brevity, we again denote the first state in each expression above as $\ket{v}$ and the second
+state as $\ket{v'}$.
+
+\begin{enumerate}[label=\alph*.,ref={Sol.~\thesection\alph*}]
+\label{sol:2p5}
+    % a.
+    \item We know from \ref{sol:2p2e} that $\ket{1} = \spket{}{+}{-}{-}$, and so require $e^{\ibf \theta} = -1$.
+    Therefore, $\theta = \{n \pi~|~n\in \Z$ \}.
+    % b.
+    \item Since $\ket{v} = e^{- \ibf \theta} \ket{v'}$, \textit{i.e.} they differ by a global phase, $\theta = \R$.
+    Note that the statement ``\textit{any value of $\theta$}'' is not strictly correct, as $\theta$ must be real-valued
+    to ensure $|e^{\ibf \theta}| = 1$.
+    % c.
+    \item The states $\ket{v}$ and $\ket{v'}$ differ by a global phase, so $\theta = \R$.
+\end{enumerate}

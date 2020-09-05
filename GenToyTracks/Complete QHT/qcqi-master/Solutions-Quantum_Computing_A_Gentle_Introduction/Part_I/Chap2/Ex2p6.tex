@@ -1,0 +1,79 @@
+% Exercise 2.6
+\section{}
+
+For each pair consisting of a state and a measurement basis, describe the possible
+measurement outcomes and give the probability for each outcome.
+\begin{enumerate}[label=\alph*.,ref={Ex.~\thesection\alph*}]
+\label{ex:2p6}
+    % a.
+    \item $\tfrac{\sqrt{3}}{2} \ket{0} - \tfrac{1}{2} \ket{1},~\left \{ \ket{0}, \ket{1} \right \}$
+    % b.
+    \item $\tfrac{\sqrt{3}}{2} \ket{1} - \tfrac{1}{2} \ket{0},~\left \{ \ket{0}, \ket{1} \right \}$
+    % c.
+    \item $\ket{- \ibf},~\left \{ \ket{0}, \ket{1} \right \}$
+    % d.
+    \item $\ket{0},~\left \{ \ket{+}, \ket{-} \right \}$
+    % e.
+    \item $\spket{}{0}{-}{1},~\left \{ \ket{\ibf}, \ket{- \ibf} \right \}$
+    % f.
+    \item $\ket{1},~\left \{ \ket{\ibf}, \ket{- \ibf} \right \}$
+    % g.
+    \item $\ket{+},~\left \{ \tfrac{1}{2} \ket{0} + \tfrac{\sqrt{3}}{2} \ket{1}, \tfrac{\sqrt{3}}{2} \ket{0} - \tfrac{1}{2} \ket{1} \right \}$
+\end{enumerate}
+
+{\Sol}
+We will denote the states here as $\ket{v}$.
+
+\begin{enumerate}[label=\alph*.,ref={Sol.~\thesection\alph*}]
+\label{sol:2p6}
+    % a.
+    \item \label{sol:2p6a} Let's write this first one in some detail.
+    Given the standard basis, the measured values can end up in either $\ket{0}$ or $\ket{1}$.
+    The probability for state $\ket{0}$ is,
+    \begin{align*}
+        P(\ket{0}) &= \left | \bra{0} \cdot \left ( \tfrac{\sqrt{3}}{2} \ket{0} - \tfrac{1}{2} \ket{1} \right ) \right |^2 \\
+        &= \left | \tfrac{\sqrt{3}}{2} \braket{0} \right |^2 \\
+        &= \tfrac{3}{4}
+    \end{align*}
+    and state $\ket{1}$,
+    \begin{align*}
+        P(\ket{1}) &= \left | \bra{1} \cdot \left ( \tfrac{\sqrt{3}}{2} \ket{0} - \tfrac{1}{2} \ket{1} \right ) \right |^2 \\
+        &= \left | -\tfrac{1}{2} \braket{1} \right |^2 \\
+        &= \tfrac{1}{4}
+    \end{align*}
+    % b.
+    \item This is the same as \ref{sol:2p6a} above, but with amplitudes swapped:
+    $P(\ket{0}) = \tfrac{1}{4}$ and $P(\ket{1}) = \tfrac{3}{4}$.
+    % c.
+    \item Since $\ket{-\ibf} = \tfrac{1}{\sqrt{2}} (\ket{0} - \ibf \ket{1})$, $P(\ket{0}) = P(\ket{1}) = \tfrac{1}{2}$.
+    % d.
+    \item $P(\ket{+}) = P(\ket{-}) = \tfrac{1}{2}$
+    % e.
+    \item $P(\ket{\ibf}) = P(\ket{-\ibf}) = \tfrac{1}{2}$
+    % f.
+    \item From \ref{sol:2p2h} we know that $\ket{1} = -\tfrac{\ibf}{\sqrt{2}} (\ket{\ibf} - \ket{-\ibf})$.
+    Therefore, $P(\ket{\ibf}) = P(\ket{-\ibf}) = \tfrac{1}{2}$.
+    % g.
+    \item It is useful here to perform a change of basis in order to express $\ket{+}$ in terms of its paired basis.
+    To do this, we need to solve a set of linear equations.
+    Writing out $\ket{+}$ in terms of the standard basis, we have,
+    \begin{align*}
+        \ket{+} = \spket{}{0}{+}{1}.
+    \end{align*}
+    We need to determined the components of $\ket{+}$ relative to the basis in which we are performing the measurement, requiring that,
+    \begin{align*}
+        \tfrac{1}{\sqrt{2}} &= c_1 \tfrac{1}{2} + c_2 \tfrac{\sqrt{3}}{2} \\
+        \tfrac{1}{\sqrt{2}} &= c_1 \tfrac{\sqrt{3}}{2} - c_2 \tfrac{1}{2}.
+    \end{align*}
+    Solving gives,
+    \begin{align*}
+        c_1 &= \tfrac{\sqrt{2}}{4} (1 + \sqrt{3}) \\
+        c_2 &= \tfrac{\sqrt{2}}{4} (1 - \sqrt{3}),
+    \end{align*}
+    leading to the probabilities,
+    \begin{align*}
+        P(\ket{a}) &= \tfrac{1}{4} (2 + \sqrt{3}) \\
+        P(\ket{a^\perp}) &= \tfrac{1}{4} (2 - \sqrt{3}),
+    \end{align*}
+    where we have used $\{ \ket{a}, \ket{a^\perp} \}$ as a shorthand for the basis.
+\end{enumerate}

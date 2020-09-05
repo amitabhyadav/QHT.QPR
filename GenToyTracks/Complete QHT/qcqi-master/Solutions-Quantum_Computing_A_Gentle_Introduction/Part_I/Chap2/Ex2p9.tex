@@ -1,0 +1,24 @@
+% Exercise 2.9
+\section{}
+
+In the BB84 protocol, how many bits do Alice and Bob need to compare to have a 90 percent chance of detecting
+Eve's presence? \\
+
+{\Sol}
+In the scenario presented in Sec.~2.4 of the text, Alice and Bob agree on the choice of bases to be used
+to encode and decode the bit values;
+here we assume Eve also learns this knowledge.
+
+For every photon Eve intercepts, on average she will choose the incorrect basis with probability $P = \tfrac{1}{2}$, and
+thereby change the polarization of the photon sent to Bob.
+As a result, even if Bob chooses the same basis as Alice used to encode the bit, he will still be incorrect
+with probability $P = \tfrac{1}{2}$.
+This means Bob will measure a different bit value than the one Alice sent with probability $P = \tfrac{1}{2} \cdot \tfrac{1}{2} = \tfrac{1}{4}$
+whenever Eve intercepts a photon, and so Eve will be undetected $1 - \tfrac{1}{4} = \tfrac{3}{4}$ of the time.
+To ensure a 90\% chance of detecting eve's presence, Alice and Bob need to compare
+\begin{align*}
+    \left (\tfrac{3}{4} \right )^n &\leq \tfrac{1}{10} \\
+    \Rightarrow n \log_{\tfrac{3}{4}} \left (\tfrac{3}{4} \right ) &> \log_{\tfrac{3}{4}} \left (\tfrac{1}{10} \right ) \\
+    \Rightarrow n &> \log_{\tfrac{3}{4}} \left (\tfrac{1}{10} \right ) = 8.00329\ldots
+\end{align*}
+measurements, where on the second line the inequality flips since the base of the logarithm is between 0 and 1.

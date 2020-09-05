@@ -1,0 +1,20 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "python.formatting.provider": "yapf",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.lintOnType": true,
+    "python.linting.pylintArgs": [
+        "--max-line-length=79",
+        "--max-doc-length=72"
+    ],
+    "python.pythonPath": "/usr/local/bin/python3",
+    "editor.rulers": [
+        79,
+        72
+    ]
+}
